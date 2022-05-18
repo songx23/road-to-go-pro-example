@@ -15,4 +15,4 @@
 vendor/
 
 # IDEA config
-../.idea/vcs.xml
+.idea/**
