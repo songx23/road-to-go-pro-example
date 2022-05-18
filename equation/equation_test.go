@@ -45,3 +45,39 @@ func TestSolveLinear(t *testing.T) {
 		})
 	}
 }
+
+func TestSolveQuadratic(t *testing.T) {
+	type args struct {
+		a float64
+		b float64
+		c float64
+	}
+	tests := []struct {
+		name  string
+		args  args
+		want  float64
+		want1 float64
+	}{
+		{
+			name: "equation 1",
+			args: args{
+				a: 1,
+				b: -1,
+				c: -6,
+			},
+			want:  3,
+			want1: -2,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, got1 := SolveQuadratic(tt.args.a, tt.args.b, tt.args.c)
+			if got != tt.want {
+				t.Errorf("SolveQuadratic() got = %v, want %v", got, tt.want)
+			}
+			if got1 != tt.want1 {
+				t.Errorf("SolveQuadratic() got1 = %v, want %v", got1, tt.want1)
+			}
+		})
+	}
+}
