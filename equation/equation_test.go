@@ -1,4 +1,4 @@
-package road_to_go_pro_example
+package equation
 
 import "testing"
 
